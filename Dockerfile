@@ -11,6 +11,7 @@ ENV remotecommand=/home/user/mycommand
 
 RUN mkdir /keys
 ADD update.sh /update.sh
+RUN chmod +x /update.sh
 
 ENTRYPOINT ["/update.sh"]
 
