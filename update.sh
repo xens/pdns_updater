@@ -13,7 +13,7 @@ else
     echo "nothing to do"
   else
     echo "I have to update the record"
-    ssh -oStrictHostKeyChecking=no -i /keys/id_rsa $REMOTE_USER@$REMOTE_IP $REMOTE_COMMAND $currentIp
+    ssh -oStrictHostKeyChecking=no -i /keys/priv.key $REMOTE_USER@$REMOTE_IP $REMOTE_COMMAND $currentIp
   fi
 fi
 sleep 60
