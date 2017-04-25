@@ -3,7 +3,7 @@
 while [ 1 -lt 10  ]
 do
 
-currentRecord=$(dig +short A $arecord @$authoritative)
+currentRecord=$(dig +short A $A_RECORD @$AUTHORITATIVE)
 currentIp=$(curl -s 'https://api.ipify.org?format=text')
 
 if [ -z "$currentIp"  ] || [ -z "$currentRecord" ]; then
@@ -13,7 +13,7 @@ else
     echo "nothing to do"
   else
     echo "I have to update the record"
-    ssh -oStrictHostKeyChecking=no -i /keys/id_rsa $user@$remoteip $remotecommand $currentIp
+    ssh -oStrictHostKeyChecking=no -i /keys/id_rsa $REMOTE_USER@$REMOTE_IP $REMOTE_COMMAND $currentIp
   fi
 fi
 sleep 60
